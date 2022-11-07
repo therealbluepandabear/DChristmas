@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/dchristmas
+dchristmas.so
+dchristmas.dylib
+dchristmas.dll
+dchristmas.a
+dchristmas.lib
+dchristmas-test-*
+*.exe
+*.o
+*.obj
+*.lst
