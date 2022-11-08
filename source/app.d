@@ -1,12 +1,14 @@
 import std.stdio;
 
 void main() {
-	int max = 30;
+	int height = 5;
 
-	for (int treeHeight = 0; treeHeight <= max; ++treeHeight) {
+	write("\033[32m");
+
+	for (int treeHeight = 0; treeHeight <= height; ++treeHeight) {
 		for (int indx = 0; indx < treeHeight; ++indx) {
 			if (indx == 0) {
-				for (int i = (max - treeHeight); i > 0; --i) {
+				for (int i = (height - treeHeight); i > 0; --i) {
 					write(" ");
 				}
 			}
