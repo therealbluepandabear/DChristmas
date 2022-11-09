@@ -153,8 +153,8 @@ class Canvas {
 void main() {
 	Cell[] cells;
 
-	int treeWidth = 40;
-	int treeHeight = 40;
+	int treeWidth = 90;
+	int treeHeight = 25;
 
 	cells ~= CellUtils.drawLine(Cell.create(0, treeHeight, '*'), Cell.create(treeWidth, treeHeight, '*'));
 	cells ~= CellUtils.drawLine(Cell.create(treeWidth, treeHeight, '*'), Cell.create(treeWidth / 2, 0, '*'));
@@ -164,7 +164,16 @@ void main() {
 		cells ~= CellUtils.drawLine(cell, Cell.create((treeWidth / 2) + (treeWidth / 2 - cell.x), cell.y, '*'));
 	}
 
-	Canvas canvas = Canvas.create(treeWidth + 1, treeHeight + 1);
+	int branchWidth = 10;
+	int branchHeight = 5;
+
+	for (int i = (treeWidth / 2) - (branchWidth / 2); i <= (treeWidth / 2) + (branchWidth / 2); ++i) {
+		for (int y = treeHeight + 1; y <= (treeHeight + 1) + branchHeight; ++y) {
+			cells ~= Cell.create(i, y, '*');
+		}
+	}
+
+	Canvas canvas = Canvas.create(treeWidth, treeHeight + branchHeight);
 
 	write("\033[32m");
 	canvas.draw(cells);
